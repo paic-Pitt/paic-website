@@ -1,38 +1,30 @@
 "use client";
 
 import { useState } from "react";
-import { Check, ChevronDown, Loader2, MoveRight } from "lucide-react";
+import { ArrowRight, Check, ChevronDown, Loader2 } from "lucide-react";
 
-const labelClass = "u-annot";
+const labelClass = "text-sm font-semibold";
 const fieldClass =
-  "w-full border-0 border-b border-chalk/25 bg-transparent px-0 py-3 text-base text-chalk outline-none transition-colors duration-200 placeholder:text-chalk/35 focus:border-gold";
+  "w-full rounded-xl border-[1.5px] border-ink/25 bg-paper px-4 py-3 text-base text-ink outline-none transition-colors duration-200 placeholder:text-ink/35 focus:border-blue focus:bg-white";
 const submitClass =
-  "group inline-flex h-14 cursor-pointer items-center justify-center gap-3 bg-gold px-8 font-display text-lg font-medium text-navy transition-colors duration-200 hover:bg-gold-bright active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-60";
+  "group inline-flex h-14 cursor-pointer items-center justify-center gap-2 rounded-full border-[1.5px] border-ink bg-gold px-8 font-display text-lg font-semibold text-ink shadow-pop transition-all duration-150 hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-pop-sm active:translate-x-1 active:translate-y-1 active:shadow-none disabled:cursor-not-allowed disabled:opacity-60";
 
 const benefits = [
   {
-    title: "Access to Exclusive Workshops",
-    desc: "Attend hands-on workshops led by experts and industry professionals.",
+    title: "Work on a real problem",
+    desc: "Every workshop starts with a company or startup that's stuck on something. You help get it unstuck.",
   },
   {
-    title: "Networking Opportunities",
-    desc: "Connect with peers, alumni, and industry partners in AI.",
+    title: "Team up across majors",
+    desc: "Business, marketing, engineering, whatever you study. Mixed teams come up with better answers.",
   },
   {
-    title: "Project Collaboration",
-    desc: "Work on real-world AI projects with fellow members.",
+    title: "Get help building",
+    desc: "Our tech team sits with your group and shows you the AI tools as you go.",
   },
   {
-    title: "Career Resources",
-    desc: "Access to internship postings, resume reviews, and career guidance.",
-  },
-  {
-    title: "Free Resources",
-    desc: "Curated learning materials, computing resources, and more.",
-  },
-  {
-    title: "Community Support",
-    desc: "Join our Discord server for 24/7 help and discussion.",
+    title: "Leave with something to show",
+    desc: "You present your work to the company and walk away with a project you can talk about in interviews.",
   },
 ];
 
@@ -92,42 +84,43 @@ export function Join() {
   };
 
   return (
-    <section id="join" className="relative overflow-hidden py-24 md:py-36">
-      <div className="u-grid-field" aria-hidden="true" />
+    <section id="join" className="pb-20 md:pb-28">
+      <div className="site-container">
+        <div className="grid items-start gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
 
-      <div className="site-container relative">
-        <div className="reveal">
-          <p className="u-annot mb-5">// Membership</p>
-          <h2 className="u-display text-[clamp(2.5rem,7vw,5rem)]">Join the club.</h2>
-          <p className="u-lede mt-6 max-w-[48ch]">
-            All students are welcome — every major, every year, no experience needed.
-          </p>
-        </div>
+          {/* Left column: pitch + benefits */}
+          <div className="lg:sticky lg:top-28">
+            <div className="reveal">
+              <h2 className="u-display text-[clamp(2.25rem,5.5vw,4.25rem)]">Join the club.</h2>
+              <p className="u-lede mt-5 max-w-[44ch] text-ink/75">
+                All students are welcome. Every major, every year, no experience needed.
+              </p>
+            </div>
 
-        <div className="mt-16 grid items-start gap-16 md:mt-20 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
-
-          {/* Left column: benefits */}
-          <ol className="reveal lg:sticky lg:top-28">
-            {benefits.map((benefit, i) => (
-              <li key={benefit.title} className="group flex gap-6 border-t border-chalk/12 py-5 last:border-b">
-                <span className="pt-1 font-mono text-sm text-gold">{String(i + 1).padStart(2, "0")}</span>
-                <div>
-                  <p className="font-display text-lg font-medium transition-colors group-hover:text-gold">{benefit.title}</p>
-                  <p className="mt-1 leading-relaxed text-chalk/60">{benefit.desc}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
+            <ul className="reveal mt-10 grid gap-6">
+              {benefits.map((benefit) => (
+                <li key={benefit.title} className="flex gap-4">
+                  <span className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full border-[1.5px] border-ink bg-gold">
+                    <Check size={15} strokeWidth={3} />
+                  </span>
+                  <div>
+                    <p className="font-display text-lg leading-snug font-semibold">{benefit.title}</p>
+                    <p className="mt-1 leading-relaxed text-ink/70">{benefit.desc}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           {/* Right column: form */}
-          <div className="reveal border border-chalk/12 bg-navy-deep/80 p-8 backdrop-blur-sm md:p-12">
+          <div className="reveal u-card bg-white p-7 shadow-pop md:p-10">
             {submitted ? (
               <div className="flex flex-col items-start py-8">
-                <span className="mb-8 grid size-16 animate-draw-in place-items-center rounded-full border border-gold text-gold">
-                  <Check size={30} strokeWidth={1.5} />
+                <span className="mb-8 grid size-16 animate-draw-in place-items-center rounded-full border-[1.5px] border-ink bg-gold">
+                  <Check size={30} strokeWidth={2.5} />
                 </span>
                 <h3 className="u-display text-[2.25rem]">Welcome to Panther AI!</h3>
-                <p className="u-lede mt-4 max-w-md">
+                <p className="u-lede mt-4 max-w-md text-ink/75">
                   Thank you for joining! Your registration has been recorded in our database. Check your email for next steps.
                 </p>
                 <button onClick={() => setSubmitted(false)} className={`${submitClass} mt-10`}>
@@ -136,31 +129,28 @@ export function Join() {
               </div>
             ) : (
               <>
-                <div className="mb-10">
-                  <p className="u-annot text-gold">Membership application</p>
-                  <h3 className="u-display mt-3 text-[2rem]">Tell us about you.</h3>
-                </div>
+                <h3 className="u-display mb-8 text-[1.9rem]">Tell us about you.</h3>
 
                 {error && (
-                  <div role="alert" className="mb-8 border-l-2 border-gold bg-gold/10 px-4 py-3 text-sm text-chalk/90">
+                  <div role="alert" className="mb-8 rounded-xl border-[1.5px] border-ink bg-coral/30 px-4 py-3 text-sm font-medium">
                     {error}
                   </div>
                 )}
 
-                <form onSubmit={handleSubmit} className="flex flex-col gap-8">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-6">
 
-                  <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-                    <div className="flex flex-col gap-1">
+                  <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                    <div className="flex flex-col gap-2">
                       <label htmlFor="firstName" className={labelClass}>First name *</label>
-                      <input id="firstName" name="firstName" required placeholder="John" className={fieldClass} />
+                      <input id="firstName" name="firstName" required placeholder="Roc" className={fieldClass} />
                     </div>
-                    <div className="flex flex-col gap-1">
+                    <div className="flex flex-col gap-2">
                       <label htmlFor="lastName" className={labelClass}>Last name *</label>
-                      <input id="lastName" name="lastName" required placeholder="Doe" className={fieldClass} />
+                      <input id="lastName" name="lastName" required placeholder="Panther" className={fieldClass} />
                     </div>
                   </div>
 
-                  <div className="flex flex-col gap-1">
+                  <div className="flex flex-col gap-2">
                     <label htmlFor="email" className={labelClass}>Pitt email *</label>
                     <input
                       id="email"
@@ -169,13 +159,13 @@ export function Join() {
                       required
                       pattern=".+@pitt\.edu"
                       title="Please use a valid @pitt.edu email address"
-                      placeholder="john.doe@pitt.edu"
+                      placeholder="roc1@pitt.edu"
                       className={fieldClass}
                     />
                   </div>
 
-                  <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-                    <div className="flex flex-col gap-1">
+                  <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                    <div className="flex flex-col gap-2">
                       <label htmlFor="year" className={labelClass}>Year *</label>
                       <div className="relative">
                         <select
@@ -183,7 +173,7 @@ export function Join() {
                           name="year"
                           required
                           defaultValue=""
-                          className={`${fieldClass} cursor-pointer appearance-none pr-8 invalid:text-chalk/35 [&>option]:bg-navy-deep [&>option]:text-chalk`}
+                          className={`${fieldClass} cursor-pointer appearance-none pr-10 invalid:text-ink/35`}
                         >
                           <option value="" disabled>Select your year</option>
                           <option value="freshman">Freshman</option>
@@ -192,28 +182,28 @@ export function Join() {
                           <option value="senior">Senior</option>
                           <option value="graduate">Graduate</option>
                         </select>
-                        <ChevronDown size={18} className="pointer-events-none absolute top-1/2 right-0 -translate-y-1/2 text-chalk/50" />
+                        <ChevronDown size={18} className="pointer-events-none absolute top-1/2 right-4 -translate-y-1/2 text-ink/50" />
                       </div>
                     </div>
 
-                    <div className="flex flex-col gap-1">
+                    <div className="flex flex-col gap-2">
                       <label htmlFor="major" className={labelClass}>Major *</label>
                       <input id="major" name="major" required placeholder="Your major" className={fieldClass} />
                     </div>
                   </div>
 
-                  <div className="flex flex-col gap-1">
-                    <label htmlFor="interests" className={labelClass}>What interests you most about AI?</label>
+                  <div className="flex flex-col gap-2">
+                    <label htmlFor="interests" className={labelClass}>What would you like to get out of the club?</label>
                     <textarea
                       id="interests"
                       name="interests"
-                      placeholder="Tell us what excites you about AI and what you hope to learn..."
+                      placeholder="Anything you're curious about, or want to try building"
                       className={`${fieldClass} min-h-28 resize-none`}
                     />
                   </div>
 
-                  <label htmlFor="newsletter" className="flex cursor-pointer items-start gap-3 text-sm text-chalk/70">
-                    <input type="checkbox" id="newsletter" name="newsletter" className="mt-0.5 size-4 cursor-pointer accent-gold" />
+                  <label htmlFor="newsletter" className="flex cursor-pointer items-start gap-3 text-sm text-ink/75">
+                    <input type="checkbox" id="newsletter" name="newsletter" className="mt-0.5 size-4 cursor-pointer accent-blue" />
                     I want to receive club newsletters and event updates
                   </label>
 
@@ -226,15 +216,15 @@ export function Join() {
                     ) : (
                       <>
                         Submit application
-                        <MoveRight size={20} strokeWidth={1.5} className="transition-transform duration-300 group-hover:translate-x-1" />
+                        <ArrowRight size={20} strokeWidth={2.25} className="transition-transform duration-200 group-hover:translate-x-0.5" />
                       </>
                     )}
                   </button>
 
-                  <p className="text-center text-sm text-chalk/45">
+                  <p className="text-center text-sm text-ink/55">
                     By submitting, you agree to our{" "}
-                    <a href="/privacy_policy" className="underline underline-offset-2 hover:text-chalk">privacy policy</a> and{" "}
-                    <a href="" className="underline underline-offset-2 hover:text-chalk">terms</a>
+                    <a href="/privacy_policy" className="underline underline-offset-2 hover:text-ink">privacy policy</a> and{" "}
+                    <a href="" className="underline underline-offset-2 hover:text-ink">terms</a>
                   </p>
                 </form>
               </>

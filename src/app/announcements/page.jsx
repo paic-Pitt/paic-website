@@ -18,21 +18,16 @@ const announcement = [
 export default function Announcements() {
   return (
     <>
-      <PageHeader annot="// Club log" title="Announcements." lede="News, updates and calls for teams from Panther AI." />
+      <PageHeader title="Announcements." lede="News, updates and calls for teams from Panther AI." />
 
-      <section id="announcement" className="pb-24 md:pb-36">
+      <section id="announcement" className="pb-20 md:pb-28">
         <div className="site-container">
-          <ul className="border-b border-chalk/12">
+          <ul className="grid max-w-4xl gap-5">
             {announcement.map((a) => (
-              <li
-                key={a.id}
-                className="reveal grid gap-3 border-t border-chalk/12 py-10 md:grid-cols-[10rem_1fr] md:gap-10"
-              >
-                <p className="u-annot text-gold">No. {String(a.id).padStart(3, "0")}</p>
-                <div>
-                  <h2 className="u-display text-[clamp(1.6rem,3vw,2.4rem)]">{a.attributes.title}</h2>
-                  <p className="u-lede mt-3 max-w-[60ch]">{a.attributes.body}</p>
-                </div>
+              <li key={a.id} className="reveal u-card bg-white p-7 md:p-9">
+                <p className="u-tag bg-sky">No. {a.id}</p>
+                <h2 className="u-display mt-4 text-[clamp(1.6rem,3vw,2.25rem)]">{a.attributes.title}</h2>
+                <p className="u-lede mt-3 max-w-[60ch] text-ink/75">{a.attributes.body}</p>
               </li>
             ))}
           </ul>

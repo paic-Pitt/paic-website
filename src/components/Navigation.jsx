@@ -25,17 +25,17 @@ export function Navigation() {
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b transition-colors duration-300 ${
-        solid ? "border-chalk/10 bg-navy-deep/85 backdrop-blur-md" : "border-transparent bg-transparent"
+      className={`sticky top-0 z-50 border-b-[1.5px] transition-colors duration-300 ${
+        solid ? "border-ink bg-paper/92 backdrop-blur-md" : "border-transparent bg-transparent"
       }`}
     >
-      <div className="site-container flex items-center justify-between py-4 md:py-5">
+      <div className="site-container flex items-center justify-between py-3.5 md:py-4">
         {/* Logo + wordmark */}
         <Link href="/" className="group flex items-center gap-3" aria-label="Panther AI Club home">
-          <span className="grid size-10 place-items-center rounded-md bg-chalk transition-transform duration-300 group-hover:-rotate-3">
+          <span className="grid size-11 place-items-center rounded-xl border-[1.5px] border-ink bg-white transition-transform duration-300 group-hover:-rotate-6">
             <Image src="/logo-removebg.png" alt="" width={100} height={100} className="size-9" />
           </span>
-          <span className="font-display text-[1.35rem] leading-none font-extrabold tracking-tight md:text-[1.6rem]">
+          <span className="font-display text-[1.35rem] leading-none font-extrabold tracking-tight md:text-[1.5rem]">
             Panther AI
           </span>
         </Link>
@@ -48,13 +48,13 @@ export function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`group relative text-[0.95rem] tracking-wide transition-colors duration-200 ${
-                  active ? "text-chalk" : "text-chalk/70 hover:text-chalk"
+                className={`group relative font-medium transition-colors duration-200 ${
+                  active ? "text-ink" : "text-ink/70 hover:text-ink"
                 }`}
               >
                 {link.label}
                 <span
-                  className={`absolute -bottom-1.5 left-0 h-px bg-gold transition-all duration-300 ${
+                  className={`absolute -bottom-1.5 left-0 h-[3px] rounded-full bg-gold transition-all duration-300 ${
                     active ? "w-full" : "w-0 group-hover:w-full"
                   }`}
                 />
@@ -63,7 +63,7 @@ export function Navigation() {
           })}
           <Link
             href="/#join"
-            className="rounded-full border border-gold px-5 py-2 text-sm font-medium text-gold transition-colors duration-200 hover:bg-gold hover:text-navy"
+            className="rounded-full border-[1.5px] border-ink bg-gold px-5 py-2 font-display font-semibold shadow-pop-sm transition-all duration-150 hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none"
           >
             Join us
           </Link>
@@ -78,9 +78,9 @@ export function Navigation() {
           className="-mr-2 flex size-11 cursor-pointer flex-col items-center justify-center gap-[5px] lg:hidden"
         >
           <span className="sr-only">{isMobileMenuOpen ? "Close menu" : "Open menu"}</span>
-          <span className={`block h-px w-6 bg-chalk transition-all duration-300 ${isMobileMenuOpen ? "translate-y-[6px] rotate-45" : ""}`} />
-          <span className={`block h-px bg-chalk transition-all duration-300 ${isMobileMenuOpen ? "w-0 opacity-0" : "w-4"}`} />
-          <span className={`block h-px w-6 bg-chalk transition-all duration-300 ${isMobileMenuOpen ? "-translate-y-[6px] -rotate-45" : ""}`} />
+          <span className={`block h-0.5 w-6 rounded-full bg-ink transition-all duration-300 ${isMobileMenuOpen ? "translate-y-[7px] rotate-45" : ""}`} />
+          <span className={`block h-0.5 rounded-full bg-ink transition-all duration-300 ${isMobileMenuOpen ? "w-0 opacity-0" : "w-6"}`} />
+          <span className={`block h-0.5 w-6 rounded-full bg-ink transition-all duration-300 ${isMobileMenuOpen ? "-translate-y-[7px] -rotate-45" : ""}`} />
         </button>
       </div>
 
@@ -92,10 +92,9 @@ export function Navigation() {
               key={link.href}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="u-display flex animate-draw-in items-baseline gap-4 border-b border-chalk/10 py-4 text-[2rem]"
+              className="u-display animate-draw-in border-b border-ink/15 py-4 text-[1.9rem]"
               style={{ animationDelay: `${i * 40}ms` }}
             >
-              <span className="u-annot text-gold">{String(i + 1).padStart(2, "0")}</span>
               {link.label}
             </Link>
           ))}

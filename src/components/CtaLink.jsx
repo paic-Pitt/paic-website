@@ -1,22 +1,20 @@
-import { MoveRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
-// Large text link with a gold arrow that nudges forward on hover
-export default function CtaLink({ href, children, className = "", muted = false }) {
+const VARIANTS = {
+  primary: "bg-gold text-ink",
+  dark: "bg-ink text-paper",
+  outline: "bg-white text-ink",
+};
+
+// Pill button link with a hard shadow that presses down on hover
+export default function CtaLink({ href, children, className = "", variant = "primary" }) {
   return (
     <a
       href={href}
-      className={`group inline-flex items-baseline gap-[0.6em] font-display font-medium transition-colors ${
-        muted ? "text-chalk/70 hover:text-chalk" : "text-chalk"
-      } ${className}`}
+      className={`group inline-flex items-center gap-2 rounded-full border-[1.5px] border-ink px-6 py-3 font-display text-[1.05rem] font-semibold shadow-pop transition-all duration-150 hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-pop-sm active:translate-x-1 active:translate-y-1 active:shadow-none ${VARIANTS[variant]} ${className}`}
     >
-      <MoveRight
-        aria-hidden="true"
-        strokeWidth={1.5}
-        className="size-[0.9em] shrink-0 translate-y-[0.12em] text-gold transition-transform duration-300 group-hover:translate-x-1.5"
-      />
-      <span className="underline decoration-transparent decoration-1 underline-offset-[0.25em] transition-colors duration-300 group-hover:decoration-gold">
-        {children}
-      </span>
+      {children}
+      <ArrowRight aria-hidden="true" size={18} strokeWidth={2.25} className="transition-transform duration-200 group-hover:translate-x-0.5" />
     </a>
   );
 }

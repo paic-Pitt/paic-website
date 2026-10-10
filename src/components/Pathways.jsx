@@ -1,8 +1,6 @@
-import NeuralNet from "./NeuralNet";
-import CtaLink from "./CtaLink";
 import { PARTNER_MAILTO } from "@/lib/site";
 
-const goldLink = "text-gold underline decoration-gold/0 underline-offset-4 transition-colors hover:decoration-gold";
+const goldLink = "text-gold underline decoration-gold/40 decoration-2 underline-offset-4 transition-colors hover:decoration-gold";
 
 const PATHS = [
   {
@@ -17,7 +15,7 @@ const PATHS = [
     who: "I study business, marketing, or anything else.",
     answer: (
       <>
-        Join a <a href="/#join" className={goldLink}>workshop team</a> — no code required.
+        Join a <a href="/#join" className={goldLink}>workshop team</a>. No code required.
       </>
     ),
   },
@@ -37,40 +35,39 @@ const PATHS = [
       </>
     ),
   },
+  {
+    who: "I just want to meet people curious about AI.",
+    answer: (
+      <>
+        <a href="/#join" className={goldLink}>Join the community</a>.
+      </>
+    ),
+  },
 ];
 
 export function Pathways() {
   return (
-    <section id="pathways" className="relative overflow-hidden bg-navy-deep py-24 md:py-36">
-      <NeuralNet className="pointer-events-none absolute top-[8%] -right-[30%] w-[90%] opacity-20 md:-right-[10%] md:w-[50%]" />
-
-      <div className="site-container relative">
-        <div className="reveal">
-          <p className="u-annot mb-5">// Find your place</p>
-          <h2 className="u-display max-w-[18ch] text-[clamp(2.2rem,5.5vw,4rem)]">What can I do at Panther AI?</h2>
-        </div>
-
-        <dl className="mt-14 md:mt-20">
-          {PATHS.map((path) => (
-            <div
-              key={path.who}
-              className="reveal grid gap-2 border-t border-chalk/12 py-7 md:grid-cols-[1.1fr_1fr] md:items-baseline md:gap-10"
-            >
-              <dt className="u-display text-[clamp(1.35rem,2.9vw,2rem)] text-chalk/85">{path.who}</dt>
-              <dd className="u-display text-[clamp(1.1rem,2.2vw,1.5rem)]">{path.answer}</dd>
-            </div>
-          ))}
-          <div className="reveal grid gap-2 border-y border-chalk/12 py-7 md:grid-cols-[1.1fr_1fr] md:items-baseline md:gap-10">
-            <dt className="u-display text-[clamp(1.35rem,2.9vw,2rem)] text-chalk/85">
-              I just want to meet people curious about AI.
-            </dt>
-            <dd>
-              <CtaLink href="/#join" className="text-[clamp(1.1rem,2.2vw,1.5rem)]">
-                Join the community.
-              </CtaLink>
-            </dd>
+    <section id="pathways" className="pb-20 md:pb-28">
+      <div className="site-container">
+        <div className="u-card bg-blue px-7 py-12 text-paper md:px-14 md:py-16">
+          <div className="reveal">
+            <h2 className="u-display max-w-[18ch] text-[clamp(2.1rem,5vw,3.75rem)]">What can I do at Panther AI?</h2>
           </div>
-        </dl>
+
+          <dl className="mt-10 border-b border-paper/25 md:mt-14">
+            {PATHS.map((path) => (
+              <div
+                key={path.who}
+                className="reveal grid gap-2 border-t border-paper/25 py-6 md:grid-cols-[1.15fr_1fr] md:items-baseline md:gap-10"
+              >
+                <dt className="font-display text-[clamp(1.2rem,2.3vw,1.6rem)] leading-snug font-medium text-paper/85">
+                  &ldquo;{path.who}&rdquo;
+                </dt>
+                <dd className="font-display text-[clamp(1.15rem,2.1vw,1.5rem)] font-semibold">{path.answer}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
       </div>
     </section>
   );

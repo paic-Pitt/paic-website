@@ -1,12 +1,16 @@
 // Shared intro block for inner pages (Team, Events, Announcements)
-export default function PageHeader({ annot, title, lede }) {
+export default function PageHeader({ title, lede }) {
   return (
-    <section className="relative overflow-hidden pt-16 pb-16 md:pt-24 md:pb-20">
-      <div className="u-grid-field" aria-hidden="true" />
+    <section className="relative overflow-hidden pt-12 pb-12 md:pt-20 md:pb-16">
+      {/* Loose shapes in the corner */}
+      <div aria-hidden="true" className="pointer-events-none absolute top-10 right-[6%] hidden md:block">
+        <span className="block size-28 rounded-full border-[1.5px] border-ink bg-gold" />
+        <span className="-mt-10 -ml-14 block size-20 rotate-12 rounded-3xl border-[1.5px] border-ink bg-sky" />
+      </div>
+
       <div className="site-container relative">
-        <p className="u-annot mb-5 animate-draw-in">{annot}</p>
-        <h1 className="u-display animate-draw-in text-[clamp(2.75rem,7vw,5.5rem)] [animation-delay:80ms]">{title}</h1>
-        {lede && <p className="u-lede mt-6 max-w-[52ch] animate-draw-in [animation-delay:160ms]">{lede}</p>}
+        <h1 className="u-display animate-draw-in text-[clamp(2.6rem,6.5vw,5rem)]">{title}</h1>
+        {lede && <p className="u-lede mt-5 max-w-[52ch] animate-draw-in text-ink/75 [animation-delay:160ms]">{lede}</p>}
       </div>
     </section>
   );

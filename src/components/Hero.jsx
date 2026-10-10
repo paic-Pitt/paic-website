@@ -1,79 +1,104 @@
-import NeuralNet from "./NeuralNet";
+import { Calculator, CodeXml, MapPin, Megaphone, Palette, Plus, Stethoscope, Store } from "lucide-react";
 import CtaLink from "./CtaLink";
 import { PARTNER_MAILTO } from "@/lib/site";
 
 const FACTS = [
-  { value: "Every", label: "major welcome" },
-  { value: "Real", label: "company problems" },
-  { value: "Hands-on", label: "AI workshops" },
+  { value: "0", label: "coding experience needed", tone: "bg-white" },
+  { value: "Every", label: "major welcome", tone: "bg-sky" },
+  { value: "Real", label: "company problems", tone: "bg-gold" },
 ];
 
-// A word with a hand-drawn gold circle around it
-function Circled({ children }) {
+// Who's sitting around the table, clockwise from the top
+const SEATS = [
+  { label: "Marketing", icon: Megaphone, tone: "bg-white" },
+  { label: "Finance", icon: Calculator, tone: "bg-sky" },
+  { label: "You?", icon: Plus, tone: "border-dashed bg-paper" },
+  { label: "Comp Sci", icon: CodeXml, tone: "bg-blue text-paper" },
+  { label: "Nursing", icon: Stethoscope, tone: "bg-coral" },
+  { label: "Design", icon: Palette, tone: "bg-white" },
+];
+
+// A workshop seen from above: one company problem on the table, a different major in every seat.
+// Sizes are in cqw so the whole drawing scales with its container.
+function WorkshopTable() {
   return (
-    <span className="relative inline-block whitespace-nowrap">
-      {children}
-      <svg
-        viewBox="0 0 200 64"
-        preserveAspectRatio="none"
-        fill="none"
-        aria-hidden="true"
-        className="pointer-events-none absolute -inset-x-[9%] -inset-y-[18%] h-[136%] w-[118%] overflow-visible"
-      >
-        <path
-          d="M14,40 C4,24 40,8 96,6 C150,4 196,14 194,32 C192,50 146,60 96,58 C48,56 8,48 10,30 C12,18 36,10 66,8"
-          pathLength="1"
-          stroke="var(--color-gold)"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          vectorEffect="non-scaling-stroke"
-          className="u-ink"
-          style={{ animationDelay: "0.9s", animationDuration: "1.1s" }}
-        />
-      </svg>
-    </span>
+    <figure className="mx-auto w-full max-w-[32rem] animate-fade-in [animation-delay:200ms]">
+      <div className="@container relative aspect-square">
+        <div className="absolute top-1/2 left-1/2 grid size-[46%] -translate-1/2 place-items-center rounded-full border-[1.5px] border-ink bg-gold shadow-pop">
+          <div className="flex flex-col items-center gap-[2.2cqw] px-[4cqw] text-center">
+            <span className="grid size-[9cqw] place-items-center rounded-full border-[1.5px] border-ink bg-white">
+              <Store className="size-[4.6cqw]" strokeWidth={2} />
+            </span>
+            <p className="u-display text-[4.4cqw] leading-[1.1]">One real problem from a real company</p>
+          </div>
+        </div>
+
+        {SEATS.map((seat, i) => {
+          const Icon = seat.icon;
+          const angle = (i / SEATS.length) * 2 * Math.PI - Math.PI / 2;
+          return (
+            <div
+              key={seat.label}
+              className="absolute size-[23%] -translate-1/2"
+              style={{ left: `${50 + 38.5 * Math.cos(angle)}%`, top: `${50 + 38.5 * Math.sin(angle)}%` }}
+            >
+              <div
+                className={`flex size-full animate-draw-in flex-col items-center justify-center gap-[1cqw] rounded-full border-[1.5px] border-ink shadow-pop-sm ${seat.tone}`}
+                style={{ animationDelay: `${300 + i * 90}ms` }}
+              >
+                <Icon className="size-[5.4cqw]" strokeWidth={2} />
+                <span className="text-[3cqw] leading-none font-semibold">{seat.label}</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <figcaption className="mt-6 text-center font-medium text-ink/70">
+        Every workshop: one table, one real problem, a different major in every seat.
+      </figcaption>
+    </figure>
   );
 }
 
 export function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <div className="u-grid-field" aria-hidden="true" />
-      <NeuralNet className="pointer-events-none absolute top-[14%] -right-[38%] w-[120%] opacity-35 md:top-[8%] md:right-[1%] md:w-[52%] md:opacity-100 lg:w-[46%]" />
+      <div className="site-container relative grid items-center gap-14 pt-10 pb-20 md:pt-14 md:pb-28 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
+        <div>
+          <h1 className="u-display max-w-[16ch] animate-draw-in text-[clamp(2.5rem,5vw,4.4rem)]">
+            Real company problems, solved by students from <span className="u-mark">every major</span>.
+          </h1>
 
-      <div className="site-container relative flex min-h-[78vh] flex-col justify-center pt-10 pb-20 md:min-h-[86vh]">
-        {/* <p className="u-annot mb-7 flex animate-draw-in items-center gap-3">
-          <span className="size-1.5 animate-node-pulse rounded-full bg-gold" />
-          Panther AI Club · University of Pittsburgh
-        </p> */}
+          <p className="u-lede mt-7 max-w-[48ch] animate-draw-in text-ink/75 [animation-delay:80ms]">
+            We bring startups and local businesses to campus with something they&apos;re stuck on. Students from
+            business, marketing, engineering and everywhere else team up to build a fix using AI. You don&apos;t
+            need to know how to code.
+          </p>
 
-        <h1 className="u-display max-w-[13ch] animate-draw-in text-[clamp(2.75rem,6.6vw,6.25rem)]">
-          We believe <Circled>anyone</Circled> can build with AI.
-        </h1>
+          <p className="mt-5 flex animate-draw-in items-center gap-2 font-semibold [animation-delay:140ms]">
+            <MapPin aria-hidden="true" size={18} strokeWidth={2.25} className="shrink-0 text-blue" />
+            A student club at the University of Pittsburgh
+          </p>
 
-        <p className="u-lede mt-8 max-w-[46ch] animate-draw-in [animation-delay:120ms]">
-          We bring startups and companies to Pitt with real problems, then team them up with students from every
-          major to solve them — hands-on, with AI.
-        </p>
+          <div className="mt-8 flex animate-draw-in flex-wrap items-center gap-4 [animation-delay:200ms]">
+            <CtaLink href="/#join">Get involved</CtaLink>
+            <CtaLink href={PARTNER_MAILTO} variant="outline">
+              Bring us a problem
+            </CtaLink>
+          </div>
 
-        <div className="mt-10 flex animate-draw-in flex-wrap items-baseline gap-x-10 gap-y-4 [animation-delay:240ms]">
-          <CtaLink href="/#join" className="text-[clamp(1.5rem,3vw,2.25rem)]">
-            Get involved
-          </CtaLink>
-          <CtaLink href={PARTNER_MAILTO} muted className="text-[clamp(1.05rem,1.6vw,1.3rem)]">
-            Bring us a problem
-          </CtaLink>
+          <dl className="mt-12 grid max-w-xl animate-fade-in gap-3 [animation-delay:400ms] sm:grid-cols-3">
+            {FACTS.map((fact) => (
+              <div key={fact.label} className={`u-card flex items-baseline gap-3 px-5 py-4 sm:block ${fact.tone}`}>
+                <dt className="u-display text-[1.9rem]">{fact.value}</dt>
+                <dd className="text-sm leading-snug font-medium sm:mt-1">{fact.label}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
 
-        <dl className="mt-16 flex animate-fade-in flex-wrap items-baseline gap-x-3 gap-y-3 [animation-delay:500ms] md:mt-24">
-          {FACTS.map((fact, i) => (
-            <div key={fact.label} className="flex items-baseline gap-2">
-              <dt className="u-display text-[1.5rem] md:text-[1.9rem]">{fact.value}</dt>
-              <dd className="u-annot">{fact.label}</dd>
-              {i < FACTS.length - 1 && <span className="mx-3 hidden h-4 w-px self-center bg-chalk/25 sm:block" aria-hidden="true" />}
-            </div>
-          ))}
-        </dl>
+        <WorkshopTable />
       </div>
     </section>
   );

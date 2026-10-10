@@ -1,23 +1,16 @@
-import { Inter, Fira_Code, Libre_Franklin } from "next/font/google";
+import { Bricolage_Grotesque, Figtree } from "next/font/google";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
-const inter = Inter({
+const figtree = Figtree({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-figtree",
 });
 
-const libreFranklin = Libre_Franklin({
+const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
-  weight: ["500", "800"],
-  variable: "--font-libre-franklin",
-});
-
-const firaCode = Fira_Code({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-fira-code",
+  variable: "--font-bricolage",
 });
 
 export const metadata = {
@@ -30,12 +23,12 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: "#092b50",
+  themeColor: "#f8f3e9",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${libreFranklin.variable} ${firaCode.variable}`}>
+    <html lang="en" className={`${figtree.variable} ${bricolage.variable}`}>
       <body>
         <Navigation />
         <main id="main">{children}</main>
