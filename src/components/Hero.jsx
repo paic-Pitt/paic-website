@@ -5,7 +5,7 @@ import { PARTNER_MAILTO } from "@/lib/site";
 const FACTS = [
   { value: "0", label: "coding experience needed", tone: "bg-white" },
   { value: "Every", label: "major welcome", tone: "bg-sky" },
-  { value: "Real", label: "company problems", tone: "bg-gold" },
+  { value: "Hands-on", label: "experience through workshops", tone: "bg-gold" },
 ];
 
 // Who's sitting around the table, clockwise from the top
@@ -29,7 +29,8 @@ function WorkshopTable() {
             <span className="grid size-[9cqw] place-items-center rounded-full border-[1.5px] border-ink bg-white">
               <Store className="size-[4.6cqw]" strokeWidth={2} />
             </span>
-            <p className="u-display text-[4.4cqw] leading-[1.1]">One real problem from a real company</p>
+            <p className="u-display text-[4.4cqw] leading-[1.1]">Different majors.
+A shared curiosity about AI.</p>
           </div>
         </div>
 
@@ -55,7 +56,7 @@ function WorkshopTable() {
       </div>
 
       <figcaption className="mt-6 text-center font-medium text-ink/70">
-        Every workshop: one table, one real problem, a different major in every seat.
+        Learn from people working in the field—and from students who see things differently.
       </figcaption>
     </figure>
   );
@@ -67,13 +68,13 @@ export function Hero() {
       <div className="site-container relative grid items-center gap-14 pt-10 pb-20 md:pt-14 md:pb-28 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
         <div>
           <h1 className="u-display max-w-[16ch] animate-draw-in text-[clamp(2.5rem,5vw,4.4rem)]">
-            Real company problems, solved by students from <span className="u-mark">every major</span>.
+            See what AI means for <span className="u-mark">your field</span>.
           </h1>
 
           <p className="u-lede mt-7 max-w-[48ch] animate-draw-in text-ink/75 [animation-delay:80ms]">
-            We bring startups and local businesses to campus with something they&apos;re stuck on. Students from
-            business, marketing, engineering and everywhere else team up to build a fix using AI. You don&apos;t
-            need to know how to code.
+           AI is changing how people work. What does that look like in the field you’re studying? At PAIC, 
+            students from every major connect with industry professionals, explore that question, and gain 
+            experience through hands-on workshops. Bring your perspective. No coding experience needed.
           </p>
 
           <p className="mt-5 flex animate-draw-in items-center gap-2 font-semibold [animation-delay:140ms]">
