@@ -52,7 +52,7 @@ export function Pathways() {
       <div className="site-container">
         <div className="u-card bg-blue px-7 py-12 text-paper md:px-14 md:py-16">
           <div className="reveal">
-            <h2 className="u-display max-w-[18ch] text-[clamp(2.1rem,5vw,3.75rem)]">What can I do at Panther AI?</h2>
+            <h2 className="u-display max-w-[18ch] text-[clamp(2.1rem,5vw,3.75rem)]">What can I do at PAIC?</h2>
           </div>
 
           <dl className="mt-10 border-b border-paper/25 md:mt-14">

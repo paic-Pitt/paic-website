@@ -18,7 +18,7 @@ const announcement = [
 export default function Announcements() {
   return (
     <>
-      <PageHeader title="Announcements." lede="News, updates and calls for teams from Panther AI." />
+      <PageHeader title="Announcements." lede="News, updates and calls for teams from PAIC." />
 
       <section id="announcement" className="pb-20 md:pb-28">
         <div className="site-container">

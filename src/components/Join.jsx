@@ -7,7 +7,7 @@ const labelClass = "text-sm font-semibold";
 const fieldClass =
   "w-full rounded-xl border-[1.5px] border-ink/25 bg-paper px-4 py-3 text-base text-ink outline-none transition-colors duration-200 placeholder:text-ink/35 focus:border-blue focus:bg-white";
 const submitClass =
-  "group inline-flex h-14 cursor-pointer items-center justify-center gap-2 rounded-full border-[1.5px] border-ink bg-gold px-8 font-display text-lg font-semibold text-ink shadow-pop transition-all duration-150 hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-pop-sm active:translate-x-1 active:translate-y-1 active:shadow-none disabled:cursor-not-allowed disabled:opacity-60";
+  "group inline-flex h-14 cursor-pointer items-center justify-center gap-2 rounded-full border-[1.5px] border-ink bg-gold px-8 font-display text-lg font-semibold text-ink shadow-pop transition-all duration-150 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-none";
 
 const benefits = [
   {
@@ -100,7 +100,7 @@ export function Join() {
                 <span className="mb-8 grid size-16 animate-draw-in place-items-center rounded-full border-[1.5px] border-ink bg-gold">
                   <Check size={30} strokeWidth={2.5} />
                 </span>
-                <h3 className="u-display text-[2.25rem]">Welcome to Panther AI!</h3>
+                <h3 className="u-display text-[2.25rem]">Welcome to PAIC!</h3>
                 <p className="u-lede mt-4 max-w-md text-ink/75">
                   Thank you for joining! Your registration has been recorded in our database. Check your email for next steps.
                 </p>

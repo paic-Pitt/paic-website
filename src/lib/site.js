@@ -9,7 +9,7 @@ export const STUDIO_URL = "https://REPLACE-ME.sanity.studio";
 export const asset = (path) => `${process.env.NEXT_PUBLIC_BASE_PATH || ""}${path}`;
 
 export const PARTNER_MAILTO = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-  "Workshop partnership with Panther AI"
+  "Workshop partnership with PAIC"
 )}`;
 
 export const SOCIALS = [

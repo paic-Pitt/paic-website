@@ -16,7 +16,7 @@ export function Footer() {
             <span className="grid size-11 place-items-center rounded-xl bg-white">
               <Image src={asset("/logo-removebg.png")} alt="" width={100} height={100} className="size-9" />
             </span>
-            <span className="font-display text-[1.75rem] leading-none font-extrabold tracking-tight">Panther AI</span>
+            <span className="font-display text-[1.75rem] leading-none font-extrabold tracking-tight">PAIC</span>
           </Link>
           <p className="mt-6 max-w-sm leading-relaxed text-paper/75">
             A student organization at the University of Pittsburgh connecting real problems with students who build.
@@ -65,8 +65,8 @@ export function Footer() {
       </div>
 
       <div className="site-container relative mt-14 flex flex-col gap-2 border-t border-paper/15 py-7 text-sm text-paper/55 md:flex-row md:justify-between">
-        <p>&copy; {new Date().getFullYear()} Panther AI Club · University of Pittsburgh</p>
-        <p>Built by the Panther AI tech team</p>
+        <p>&copy; {new Date().getFullYear()} PAIC · University of Pittsburgh</p>
+        <p>Built by the PAIC tech team</p>
       </div>
 
       {/* Giant wordmark bleeding off the bottom edge */}
@@ -74,7 +74,7 @@ export function Footer() {
         aria-hidden="true"
         className="pointer-events-none -mb-[0.2em] text-center font-display text-[14.5vw] leading-none font-extrabold tracking-tight whitespace-nowrap text-gold select-none"
       >
-        PANTHER AI
+        PAIC
       </p>
     </footer>
   );

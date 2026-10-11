@@ -31,12 +31,12 @@ export function Navigation() {
     >
       <div className="site-container flex items-center justify-between py-3.5 md:py-4">
         {/* Logo + wordmark */}
-        <Link href="/" className="group flex items-center gap-3" aria-label="Panther AI Club home">
+        <Link href="/" className="group flex items-center gap-3" aria-label="PAIC home">
           <span className="grid size-11 place-items-center rounded-xl border-[1.5px] border-ink bg-white transition-transform duration-300 group-hover:-rotate-6">
             <Image src={asset("/logo-removebg.png")} alt="" width={100} height={100} className="size-9" />
           </span>
           <span className="font-display text-[1.35rem] leading-none font-extrabold tracking-tight md:text-[1.5rem]">
-            Panther AI
+            PAIC
           </span>
         </Link>
 

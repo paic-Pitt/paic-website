@@ -1,4 +1,4 @@
-# Panther AI Club Official Website
+# PAIC Official Website
 
 Built with [Next.js](https://nextjs.org) (App Router), exported as a static site and hosted on GitHub Pages. Content is edited in [Sanity](https://www.sanity.io).
 

@@ -9,7 +9,7 @@ export function About() {
     <section id="about" className="py-20 md:py-28">
       <div className="site-container grid gap-5 lg:grid-cols-[1.5fr_1fr]">
         <div className="reveal u-card bg-white p-8 md:p-12">
-          <p className="u-tag bg-sky">What is Panther AI?</p>
+          <p className="u-tag bg-sky">What is PAIC?</p>
           <h2 className="u-display mt-6 max-w-[20ch] text-[clamp(1.9rem,3.8vw,3.25rem)]">
             A workshop club where real problems meet students who want to build.
           </h2>

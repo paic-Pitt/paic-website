@@ -15,11 +15,11 @@ const bricolage = Bricolage_Grotesque({
 
 export const metadata = {
   title: {
-    default: "Panther AI Club",
-    template: "%s | Panther AI Club",
+    default: "PAIC",
+    template: "%s | PAIC",
   },
   description:
-    "Panther AI Club at the University of Pittsburgh connects startups and companies with students from every major to solve real problems with AI.",
+    "PAIC at the University of Pittsburgh connects startups and companies with students from every major to solve real problems with AI.",
 };
 
 export const viewport = {
