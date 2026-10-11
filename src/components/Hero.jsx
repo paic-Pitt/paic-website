@@ -65,9 +65,9 @@ A shared curiosity about AI.</p>
 export function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <div className="site-container relative grid items-center gap-14 pt-10 pb-20 md:pt-14 md:pb-28 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
+      <div className="site-container relative grid items-center gap-14 pt-10 pb-20 md:pt-14 md:pb-28 lg:grid-cols-[1.3fr_0.7fr] lg:gap-12">
         <div>
-          <h1 className="u-display max-w-[16ch] animate-draw-in text-[clamp(2.5rem,5vw,4.4rem)]">
+          <h1 className="u-display max-w-[22ch] animate-draw-in text-[clamp(2.4rem,4.3vw,3.9rem)]">
             Explore how AI is applied across disciplines, with industry and <span className="u-mark">hands-on experience</span>.
           </h1>
 
