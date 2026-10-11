@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { PARTNER_MAILTO } from "@/lib/site";
 
 const goldLink = "text-gold underline decoration-gold/40 decoration-2 underline-offset-4 transition-colors hover:decoration-gold";
@@ -15,7 +16,7 @@ const PATHS = [
     who: "I study business, marketing, or anything else.",
     answer: (
       <>
-        Join a <a href="/#join" className={goldLink}>workshop team</a>. No code required.
+        Join a <Link href="/#join" className={goldLink}>workshop team</Link>. No code required.
       </>
     ),
   },
@@ -23,7 +24,7 @@ const PATHS = [
     who: "I want to learn how to build with AI.",
     answer: (
       <>
-        Come to our <a href="/events" className={goldLink}>workshops</a>.
+        Come to our <Link href="/events" className={goldLink}>workshops</Link>.
       </>
     ),
   },
@@ -31,7 +32,7 @@ const PATHS = [
     who: "I want to help teams build things.",
     answer: (
       <>
-        Meet the <a href="/team" className={goldLink}>tech team</a>.
+        Meet the <Link href="/team" className={goldLink}>tech team</Link>.
       </>
     ),
   },
@@ -39,7 +40,7 @@ const PATHS = [
     who: "I just want to meet people curious about AI.",
     answer: (
       <>
-        <a href="/#join" className={goldLink}>Join the community</a>.
+        <Link href="/#join" className={goldLink}>Join the community</Link>.
       </>
     ),
   },

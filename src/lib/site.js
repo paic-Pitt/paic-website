@@ -1,6 +1,13 @@
 // Shared club info used across pages
 export const CONTACT_EMAIL = "contact@pittpantherai.org";
 
+// Where the Sanity Studio (content editor) is hosted; /studio redirects here.
+// Replace with the real address after running `npm run studio:deploy`.
+export const STUDIO_URL = "https://REPLACE-ME.sanity.studio";
+
+// Path to a file in /public. next/image doesn't add the site's base path on its own.
+export const asset = (path) => `${process.env.NEXT_PUBLIC_BASE_PATH || ""}${path}`;
+
 export const PARTNER_MAILTO = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
   "Workshop partnership with Panther AI"
 )}`;

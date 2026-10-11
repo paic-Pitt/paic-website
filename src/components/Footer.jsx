@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { CONTACT_EMAIL, NAV_LINKS, SOCIALS } from "@/lib/site";
+import { CONTACT_EMAIL, NAV_LINKS, SOCIALS, asset } from "@/lib/site";
 
 const headingClass = "mb-5 text-sm font-semibold tracking-wider text-paper/55 uppercase";
 
@@ -14,7 +14,7 @@ export function Footer() {
         <div>
           <Link href="/" className="flex items-center gap-3">
             <span className="grid size-11 place-items-center rounded-xl bg-white">
-              <Image src="/logo-removebg.png" alt="" width={100} height={100} className="size-9" />
+              <Image src={asset("/logo-removebg.png")} alt="" width={100} height={100} className="size-9" />
             </span>
             <span className="font-display text-[1.75rem] leading-none font-extrabold tracking-tight">Panther AI</span>
           </Link>

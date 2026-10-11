@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { NAV_LINKS } from "@/lib/site";
+import { NAV_LINKS, asset } from "@/lib/site";
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,7 +33,7 @@ export function Navigation() {
         {/* Logo + wordmark */}
         <Link href="/" className="group flex items-center gap-3" aria-label="Panther AI Club home">
           <span className="grid size-11 place-items-center rounded-xl border-[1.5px] border-ink bg-white transition-transform duration-300 group-hover:-rotate-6">
-            <Image src="/logo-removebg.png" alt="" width={100} height={100} className="size-9" />
+            <Image src={asset("/logo-removebg.png")} alt="" width={100} height={100} className="size-9" />
           </span>
           <span className="font-display text-[1.35rem] leading-none font-extrabold tracking-tight md:text-[1.5rem]">
             Panther AI

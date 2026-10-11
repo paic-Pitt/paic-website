@@ -57,30 +57,11 @@ export function Join() {
       return;
     }
 
-    try {
-      // 3. Send Data to Backend
-      const response = await fetch('/api/members', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        setSubmitted(true);
-        e.target.reset();
-      } else {
-        setError(data.error || "Something went wrong. Please try again.");
-      }
-    } catch (err) {
-      console.error("Network Error:", err);
-      setError("Failed to connect to server. Please try again later.");
-    } finally {
-      setIsLoading(false);
-    }
+    // 3. Registration isn't wired up yet. The site is a static export with no server of its own,
+    // so send formData straight to a hosted store (e.g. Supabase) from here, then call
+    // setSubmitted(true) and e.target.reset() on success.
+    setError("Online registration isn't open yet. Follow us on Instagram for updates!");
+    setIsLoading(false);
   };
 
   return (

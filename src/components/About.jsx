@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { asset } from "@/lib/site";
 import { teamMembers } from "@/lib/team";
 
 export function About() {
@@ -34,7 +35,7 @@ export function About() {
               {teamMembers.map((member) => (
                 <Image
                   key={member.name}
-                  src={member.picture}
+                  src={asset(member.picture)}
                   alt=""
                   width={96}
                   height={96}

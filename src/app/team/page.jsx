@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import CtaLink from "@/components/CtaLink";
+import { asset } from "@/lib/site";
 import { teamMembers } from "@/lib/team";
 
 export const metadata = { title: "Team" };
@@ -27,7 +28,7 @@ export default function Team() {
               >
                 <div className="relative aspect-square overflow-hidden border-b-[1.5px] border-ink bg-sky">
                   <Image
-                    src={member.picture || "/placeholder_profile_image.png"}
+                    src={asset(member.picture || "/placeholder_profile_image.png")}
                     alt={member.name}
                     fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
