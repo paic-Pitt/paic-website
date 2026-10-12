@@ -13,7 +13,7 @@ export const PARTNER_MAILTO = `mailto:${CONTACT_EMAIL}?subject=${encodeURICompon
 )}`;
 
 // Discord invite, used by the "Join our Discord" section. Replace with the real invite link.
-export const DISCORD_URL = "https://discord.gg/REPLACE-ME";
+export const DISCORD_URL = "https://discord.gg/CMMrCwzgK";
 
 export const SOCIALS = [
   { label: "Instagram", href: "https://www.instagram.com/pitt.paic/" },
